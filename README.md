@@ -32,7 +32,7 @@ npm install -g module-analyzr
 ```
 
 # CLI
-After intalling, you can use `module-analyzr` command in any directory in your system:
+After installing, you can use `module-analyzr` command in any directory in your system:
 
 ```
 module-analyzr <pkg> <path> [options]
