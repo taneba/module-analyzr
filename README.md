@@ -35,14 +35,18 @@ npm install -g module-analyzr
 After installing, you can use `module-analyzr` command in any directory in your system:
 
 ```
-module-analyzr <pkg> <path> [options]
+  Usage: module-analyzr <moduleName> <path> [options]
 
-`path` can accept glob pattern, file path, directory path
+    moduleName    A name of module.
+    path          File path or directory path or glob pattern
 
-# example
+  Options:
+    -i   File path or directory path or glob pattern to ignore. Default: [node_modules]
+
+
+# example and output
 module-analyzr react src/**/*.js
 
-# output
 { importedModules:
    [ { moduleName: 'Component', usageAmount: 10 },
      { moduleName: 'Node', usageAmount: 2 },
