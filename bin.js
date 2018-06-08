@@ -8,9 +8,13 @@ const path = argv._.slice(1)
 
 const showHelp = () => {
   console.log(`
-    Usage: module-analyzr <module> <path> [options]
+    Usage: module-analyzr <moduleName> <path> [options]
 
-    Extract usage of passed module.
+      moduleName    A name of module.
+      path          File path or directory path or glob pattern
+
+    Options:
+      -i   File path or directory path or glob pattern to ignore. Default: [node_modules]
   `)
 }
 
@@ -19,4 +23,4 @@ if (argv.h) {
   return
 }
 
-console.log(analyzr(moduleName, path, {cwd: true}))
+console.log(analyzr(moduleName, path, {cwd: true, i: argv.i}))
