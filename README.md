@@ -42,7 +42,7 @@ After installing, you can use `module-analyzr` command in any directory in your 
 
   Options:
     -i   File path or directory path or glob pattern to ignore. Default: [node_modules]
-
+    -type    "typescript" | "flow"
 
 # example and output
 module-analyzr react src/**/*.js

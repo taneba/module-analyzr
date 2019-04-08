@@ -15,6 +15,7 @@ const showHelp = () => {
 
     Options:
       -i   File path or directory path or glob pattern to ignore. Default: [node_modules]
+      -type   "typescript" | "flow"
   `)
 }
 

@@ -22,7 +22,7 @@ module.exports = (pkgName, path, options) => {
   
   files.forEach(file => {
     const data = fs.readFileSync(file, 'utf8')
-    const ast = parser(data)
+    const ast = parser(data, options)
     const importData = extractStatement(ast, pkgName)
     
     // TODO: extract to function

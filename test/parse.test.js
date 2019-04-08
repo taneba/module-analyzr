@@ -8,8 +8,9 @@ describe('module-analyzr', () => {
     expect(analyzer('test-module', fixture)).toEqual({
       importedModules: [
         { moduleName: 'export', usageAmount: 1 },
-        { moduleName: 'export1', usageAmount: 2 },
-        { moduleName: 'export2', usageAmount: 1 }
+        { moduleName: 'export1', usageAmount: 1 },
+        { moduleName: 'export2', usageAmount: 1 },
+        { moduleName: 'export3', usageAmount: 1 }
       ],
       importedDefault: 1,
       importedWithNameSpace: 1
@@ -35,10 +36,26 @@ describe('module-analyzr', () => {
     expect(analyzer('test-module', fixture)).toEqual({
       importedModules: [
         { moduleName: 'export', usageAmount: 1 },
-        { moduleName: 'export1', usageAmount: 4 },
-        { moduleName: 'export2', usageAmount: 3 }
+        { moduleName: 'export1', usageAmount: 3 },
+        { moduleName: 'export2', usageAmount: 3 },
+        { moduleName: 'export3', usageAmount: 1 }
       ],
       importedDefault: 2,
+      importedWithNameSpace: 1
+    })
+  })
+
+  it('should parse typescript files', () => {
+    const fixture = path.join(__dirname, './fixtures/ts-project')
+
+    expect(analyzer('test-module', fixture, {type: 'typescript'})).toEqual({
+      importedModules: [
+        { moduleName: 'export', usageAmount: 1 },
+        { moduleName: 'export1', usageAmount: 1 },
+        { moduleName: 'export2', usageAmount: 1 },
+        { moduleName: 'export3', usageAmount: 1 }
+      ],
+      importedDefault: 1,
       importedWithNameSpace: 1
     })
   })
