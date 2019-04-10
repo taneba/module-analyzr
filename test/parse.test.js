@@ -48,7 +48,7 @@ describe('module-analyzr', () => {
   it('should parse typescript files', () => {
     const fixture = path.join(__dirname, './fixtures/ts-project')
 
-    expect(analyzer('test-module', fixture, {type: 'typescript'})).toEqual({
+    expect(analyzer('test-module', fixture, {typescript: true})).toEqual({
       importedModules: [
         { moduleName: 'export', usageAmount: 1 },
         { moduleName: 'export1', usageAmount: 1 },

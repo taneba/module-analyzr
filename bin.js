@@ -15,7 +15,8 @@ const showHelp = () => {
 
     Options:
       -i   File path or directory path or glob pattern to ignore. Default: [node_modules]
-      -type   "typescript" | "flow"
+      -typescript  passes typescript plugin to the parser
+      -flow  passes flow plugin to the parser
   `)
 }
 
