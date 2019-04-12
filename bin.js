@@ -15,9 +15,9 @@ const showHelp = () => {
 
     Options:
       -i   File path or directory path or glob pattern to ignore. Default: [node_modules]
-      -typescript  passes typescript plugin to the parser
-      -flow  passes flow plugin to the parser
-  `)
+      --type=typescript  passes typescript plugin to the parser
+      --type=flow  passes flow plugin to the parser
+    `)
 }
 
 if (argv.h) {
@@ -25,4 +25,4 @@ if (argv.h) {
   return
 }
 
-console.log(analyzr(moduleName, path, {cwd: true, i: argv.i, typescript: argv.typescript, flow: argv.flow}))
+console.log(analyzr(moduleName, path, {cwd: true, i: argv.i, type: argv.type}))

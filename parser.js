@@ -13,10 +13,10 @@ module.exports = (code, options) => {
     "flowComments",
     "dynamicImport"
   ]
-  if(options.flow){
+  if(options.type === 'flow'){
     plugins.unshift('flow')
   }
-  if(options.typescript) {
+  if(options.type === 'typescript') {
     plugins.unshift('typescript')
   }
   return babylon.parse(code, {
