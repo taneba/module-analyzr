@@ -25,4 +25,4 @@ if (argv.h) {
   return
 }
 
-console.log(analyzr(moduleName, path, {cwd: true, i: argv.i}))
+console.log(analyzr(moduleName, path, {cwd: true, i: argv.i, typescript: argv.typescript, flow: argv.flow}))
