@@ -1,20 +1,27 @@
 # module-analyzr
-*module-analyzr* is a simple CLI and toolbox to analyze the usage of a package.
+*module-analyzr* is a simple CLI and toolbox to analyze the usage of certain npm package.
 
-input:
+Let's say you have code like this:
 
 ```js
+// index.js
+
 import defaultExport from "test-module";
 import * as name from "test-module";
 import { export as alias } from "test-module";
 
 import { export1, export2 } from "test-module";
 import { export1 } from "test-module";
+
+...
 ```
 
-output:
-```js
-{
+And you can analyze the usage of "test-module"
+
+```bash
+module-analyzr test-module index.js
+
+=> {
   importedModules: [
     { moduleName: 'export', usageAmount: 1 },
     { moduleName: 'export1', usageAmount: 2 },
